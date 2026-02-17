@@ -75,7 +75,7 @@ const HomePage = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                 alt="Lucas Net Logo" 
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
             </div>
 
@@ -495,7 +495,7 @@ const HomePage = () => {
                 <img 
                   src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                   alt="Lucas Net Logo" 
-                  className="h-16 w-auto"
+                  className="h-20 w-auto"
                 />
               </div>
               <p className="text-gray-400 leading-relaxed">{mockData.company.tagline}</p>
