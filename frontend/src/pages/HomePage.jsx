@@ -395,23 +395,23 @@ const HomePage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
-            <p className="text-xl text-gray-600">Tire suas dúvidas sobre nossos serviços</p>
+            <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Perguntas Frequentes</h2>
+            <p className="text-xl text-cyan-200">Tire suas dúvidas sobre nossos serviços</p>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {mockData.faq.map((item) => (
               <AccordionItem
                 key={item.id}
                 value={`item-${item.id}`}
-                className="border-2 rounded-lg px-6 hover:border-blue-600 transition-colors"
+                className="bg-gray-800/50 border-2 border-cyan-500/30 rounded-lg px-6 hover:border-cyan-400 transition-all backdrop-blur-sm"
               >
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-blue-600">
+                <AccordionTrigger className="text-left font-semibold text-white hover:text-cyan-400 transition-colors">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed">
+                <AccordionContent className="text-cyan-100 leading-relaxed">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -421,18 +421,18 @@ const HomePage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-blue-700">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-600 to-blue-700 border-y-2 border-cyan-400/30 shadow-[0_0_50px_rgba(34,211,238,0.3)]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Solicite um Orçamento</h2>
-            <p className="text-xl text-blue-100">Preencha o formulário e entraremos em contato rapidamente</p>
+            <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Solicite um Orçamento</h2>
+            <p className="text-xl text-cyan-100">Preencha o formulário e entraremos em contato rapidamente</p>
           </div>
-          <Card className="border-0 shadow-2xl">
+          <Card className="border-2 border-cyan-400/50 shadow-[0_0_40px_rgba(34,211,238,0.4)] bg-gray-900/90 backdrop-blur-sm">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nome Completo *</Label>
+                    <Label htmlFor="name" className="text-cyan-200">Nome Completo *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -440,11 +440,11 @@ const HomePage = () => {
                       onChange={handleInputChange}
                       placeholder="Seu nome"
                       required
-                      className="h-12"
+                      className="h-12 bg-gray-800/50 border-cyan-500/30 text-white placeholder:text-cyan-300/50 focus:border-cyan-400"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">E-mail *</Label>
+                    <Label htmlFor="email" className="text-cyan-200">E-mail *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -453,25 +453,25 @@ const HomePage = () => {
                       onChange={handleInputChange}
                       placeholder="seu@email.com"
                       required
-                      className="h-12"
+                      className="h-12 bg-gray-800/50 border-cyan-500/30 text-white placeholder:text-cyan-300/50 focus:border-cyan-400"
                     />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone *</Label>
+                    <Label htmlFor="phone" className="text-cyan-200">Telefone *</Label>
                     <Input
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(11) 98765-4321"
+                      placeholder="(24) 98765-4321"
                       required
-                      className="h-12"
+                      className="h-12 bg-gray-800/50 border-cyan-500/30 text-white placeholder:text-cyan-300/50 focus:border-cyan-400"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="cep">CEP *</Label>
+                    <Label htmlFor="cep" className="text-cyan-200">CEP *</Label>
                     <Input
                       id="cep"
                       name="cep"
@@ -479,12 +479,12 @@ const HomePage = () => {
                       onChange={handleInputChange}
                       placeholder="00000-000"
                       required
-                      className="h-12"
+                      className="h-12 bg-gray-800/50 border-cyan-500/30 text-white placeholder:text-cyan-300/50 focus:border-cyan-400"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Mensagem (opcional)</Label>
+                  <Label htmlFor="message" className="text-cyan-200">Mensagem (opcional)</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -492,13 +492,13 @@ const HomePage = () => {
                     onChange={handleInputChange}
                     placeholder="Conte-nos mais sobre suas necessidades..."
                     rows={4}
-                    className="resize-none"
+                    className="resize-none bg-gray-800/50 border-cyan-500/30 text-white placeholder:text-cyan-300/50 focus:border-cyan-400"
                   />
                 </div>
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-6"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-lg py-6 shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all"
                 >
                   Enviar Solicitação
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -510,7 +510,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-t-2 border-cyan-500/30">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -524,21 +524,21 @@ const HomePage = () => {
               <p className="text-cyan-200 leading-relaxed">{mockData.company.tagline}</p>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Links Rápidos</h3>
+              <h3 className="font-bold text-lg mb-4 text-cyan-400">Links Rápidos</h3>
               <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Início</a></li>
-                <li><a href="#plans" className="text-gray-400 hover:text-white transition-colors">Planos</a></li>
-                <li><a href="#coverage" className="text-gray-400 hover:text-white transition-colors">Cobertura</a></li>
-                <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="#home" className="text-cyan-200 hover:text-cyan-400 transition-colors">Início</a></li>
+                <li><a href="#plans" className="text-cyan-200 hover:text-cyan-400 transition-colors">Planos</a></li>
+                <li><a href="#coverage" className="text-cyan-200 hover:text-cyan-400 transition-colors">Cobertura</a></li>
+                <li><a href="#faq" className="text-cyan-200 hover:text-cyan-400 transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Serviços</h3>
+              <h3 className="font-bold text-lg mb-4 text-cyan-400">Serviços</h3>
               <ul className="space-y-2">
                 <li>
                   <button
                     onClick={() => window.open(mockData.externalLinks.speedTest, '_blank')}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-cyan-200 hover:text-cyan-400 transition-colors"
                   >
                     Speed Test
                   </button>
@@ -546,28 +546,28 @@ const HomePage = () => {
                 <li>
                   <button
                     onClick={() => window.open(mockData.externalLinks.clientArea, '_blank')}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-cyan-200 hover:text-cyan-400 transition-colors"
                   >
                     Área do Cliente
                   </button>
                 </li>
-                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Suporte</a></li>
+                <li><a href="#contact" className="text-cyan-200 hover:text-cyan-400 transition-colors">Suporte</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Contato</h3>
+              <h3 className="font-bold text-lg mb-4 text-cyan-400">Contato</h3>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-2">
-                  <Phone className="h-4 w-4 text-blue-400" />
-                  <span className="text-gray-400">{mockData.company.phone}</span>
+                  <Phone className="h-4 w-4 text-cyan-400" />
+                  <span className="text-cyan-200">{mockData.company.phone}</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4 text-blue-400" />
-                  <span className="text-gray-400">{mockData.company.email}</span>
+                  <Mail className="h-4 w-4 text-cyan-400" />
+                  <span className="text-cyan-200">{mockData.company.email}</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <MessageCircle className="h-4 w-4 text-blue-400" />
-                  <span className="text-gray-400">WhatsApp</span>
+                  <MessageCircle className="h-4 w-4 text-cyan-400" />
+                  <span className="text-cyan-200">WhatsApp</span>
                 </li>
               </ul>
             </div>
