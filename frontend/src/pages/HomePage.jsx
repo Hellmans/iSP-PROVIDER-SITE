@@ -322,36 +322,37 @@ const HomePage = () => {
       </section>
 
       {/* Coverage Section */}
-      <section id="coverage" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="coverage" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Cobertura em toda região metropolitana</h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Cobertura em São Pedro da Serra</h2>
+              <p className="text-xl text-cyan-200 mb-8">
                 Atendemos {mockData.coverage.neighborhoods} com {mockData.coverage.coverage} de cobertura.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {mockData.coverage.cities.slice(0, 8).map((city, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-gray-700">{city}</span>
+              <div className="grid grid-cols-1 gap-4 mb-8">
+                {mockData.coverage.cities.map((city, index) => (
+                  <div key={index} className="flex items-center space-x-2 bg-gray-800/50 p-3 rounded-lg border border-cyan-500/30 hover:border-cyan-400 transition-all">
+                    <MapPin className="h-5 w-5 text-cyan-400 flex-shrink-0 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+                    <span className="text-cyan-100">{city}</span>
                   </div>
                 ))}
               </div>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
+                className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all"
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
               >
                 Verificar Disponibilidade
               </Button>
             </div>
             <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur-3xl opacity-30 animate-pulse"></div>
               <img
                 src="https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf"
                 alt="Cobertura de Rede"
-                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                className="relative rounded-2xl shadow-xl w-full h-auto object-cover border-2 border-cyan-500/30"
               />
             </div>
           </div>
@@ -359,33 +360,33 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-blue-900/50 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">O que nossos clientes dizem</h2>
-            <p className="text-xl text-gray-600">Milhares de famílias já confiam na Lucas Net</p>
+            <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">O que nossos clientes dizem</h2>
+            <p className="text-xl text-cyan-200">Milhares de famílias já confiam na Lucas Net</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {mockData.testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="border-2 hover:shadow-lg transition-shadow">
+              <Card key={testimonial.id} className="bg-gray-800/50 border-2 border-cyan-500/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-[0_0_20px_rgba(34,211,238,0.5)]">
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                      <CardDescription className="text-sm">{testimonial.location}</CardDescription>
+                      <CardTitle className="text-lg text-white">{testimonial.name}</CardTitle>
+                      <CardDescription className="text-sm text-cyan-300">{testimonial.location}</CardDescription>
                     </div>
                   </div>
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]" />
                     ))}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 text-sm leading-relaxed">{testimonial.comment}</p>
+                  <p className="text-cyan-100 text-sm leading-relaxed">{testimonial.comment}</p>
                 </CardContent>
               </Card>
             ))}
