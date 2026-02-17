@@ -8,7 +8,8 @@ export const mockData = {
     description: "Internet de fibra óptica com velocidade e estabilidade incomparáveis",
     phone: "(21) 97266-8405",
     email: "contato@lucasnetfibra.com.br",
-    whatsapp: "21972668405",
+    whatsapp: "5521972668405",
+    whatsappMessage: "Ola, vim do site e gostaria de ser atendido",
     address: "São Pedro da Serra - Rio de Janeiro, RJ"
   },
 
@@ -64,6 +65,57 @@ export const mockData = {
         "Roteador premium"
       ],
       popular: false
+    },
+    {
+      id: 4,
+      name: "Essencial + TV",
+      speed: "200",
+      unit: "Mega",
+      price: "109,90",
+      features: [
+        "Wi-Fi grátis",
+        "Instalação gratuita",
+        "Suporte 24/7",
+        "Sem fidelidade",
+        "+300 canais de TV"
+      ],
+      popular: false,
+      hasTV: true
+    },
+    {
+      id: 5,
+      name: "Power + TV",
+      speed: "500",
+      unit: "Mega",
+      price: "149,90",
+      features: [
+        "Wi-Fi 6 grátis",
+        "Instalação gratuita",
+        "Suporte prioritário 24/7",
+        "Sem fidelidade",
+        "IP fixo grátis",
+        "+300 canais de TV"
+      ],
+      popular: false,
+      hasTV: true
+    },
+    {
+      id: 6,
+      name: "Ultra + TV",
+      speed: "1",
+      unit: "Giga",
+      price: "209,90",
+      features: [
+        "Wi-Fi 6 mesh grátis",
+        "Instalação gratuita",
+        "Suporte VIP 24/7",
+        "Sem fidelidade",
+        "IP fixo grátis",
+        "Roteador premium",
+        "+300 canais de TV"
+      ],
+      popular: false,
+      hasTV: true
     }
   ],
 

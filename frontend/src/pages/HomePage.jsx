@@ -78,7 +78,7 @@ const HomePage = () => {
       {/* Floating WhatsApp Button */}
       {showWhatsApp && (
         <a
-          href={`https://wa.me/${mockData.company.whatsapp}`}
+          href={`https://wa.me/${mockData.company.whatsapp}?text=${encodeURIComponent(mockData.company.whatsappMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-8 right-8 z-50 transition-all hover:scale-110"
@@ -100,7 +100,7 @@ const HomePage = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                 alt="Lucas Net Logo" 
-                className="h-24 w-auto"
+                className="h-28 w-auto"
               />
             </div>
 
@@ -122,6 +122,13 @@ const HomePage = () => {
               >
                 <Gauge className="mr-2 h-4 w-4" />
                 Speed Test
+              </Button>
+              <Button
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white shadow-[0_0_25px_rgba(34,197,94,0.5)] transition-all hover:shadow-[0_0_35px_rgba(34,197,94,0.8)]"
+                onClick={() => window.open(`https://wa.me/${mockData.company.whatsapp}?text=${encodeURIComponent(mockData.company.whatsappMessage)}`, '_blank')}
+              >
+                <MessageCircle className="mr-2 h-4 w-4" />
+                WhatsApp
               </Button>
               <Button
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all hover:shadow-[0_0_35px_rgba(34,211,238,0.8)]"
@@ -158,6 +165,13 @@ const HomePage = () => {
                   >
                     <Gauge className="mr-2 h-4 w-4" />
                     Speed Test
+                  </Button>
+                  <Button
+                    className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white w-full"
+                    onClick={() => window.open(`https://wa.me/${mockData.company.whatsapp}?text=${encodeURIComponent(mockData.company.whatsappMessage)}`, '_blank')}
+                  >
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    WhatsApp
                   </Button>
                   <Button
                     className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white w-full"
@@ -232,7 +246,7 @@ const HomePage = () => {
             <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Escolha seu plano ideal</h2>
             <p className="text-xl text-cyan-200">Sem fidelidade, instalação grátis e suporte 24/7</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockData.plans.map((plan) => (
               <Card
                 key={plan.id}
