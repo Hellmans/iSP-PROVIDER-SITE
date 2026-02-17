@@ -8,14 +8,14 @@ export const mockData = {
     description: "Internet de fibra óptica com velocidade e estabilidade incomparáveis",
     phone: "(21) 97266-8405",
     email: "contato@lucasnetfibra.com.br",
-    whatsapp: "5521972668405",
+    whatsapp: "21972668405",
     address: "São Pedro da Serra - Rio de Janeiro, RJ"
   },
 
   // Links externos
   externalLinks: {
     speedTest: "https://lucasnetfibra.com.br/speedtest", 
-    clientArea: "https://lucasnetfibra.com.br/login"
+    clientArea: "http://mkauth.lucasnetfibra.com.br/central"
   },
 
   // Planos de internet
@@ -163,7 +163,7 @@ export const mockData = {
   stats: [
     {
       id: 1,
-      value: "5mil+",
+      value: "90+",
       label: "Clientes Satisfeitos"
     },
     {
