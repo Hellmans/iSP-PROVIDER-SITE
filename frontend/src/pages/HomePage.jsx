@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -31,6 +31,7 @@ import { mockData } from '../mock';
 const HomePage = () => {
   const { toast } = useToast();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,6 +39,14 @@ const HomePage = () => {
     cep: '',
     message: ''
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowWhatsApp(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -65,11 +74,24 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+      {/* Floating WhatsApp Button */}
+      {showWhatsApp && (
+        <a
+          href={`https://wa.me/${mockData.company.whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 animate-pulse"
+          style={{ boxShadow: '0 0 30px rgba(34, 197, 94, 0.6)' }}
+        >
+          <MessageCircle className="h-8 w-8" />
+        </a>
+      )}
+
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-xl border-b border-cyan-500/30 shadow-lg shadow-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center">
               <img 
@@ -81,25 +103,25 @@ const HomePage = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Início</a>
-              <a href="#plans" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Planos</a>
-              <a href="#coverage" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Cobertura</a>
-              <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contato</a>
+              <a href="#home" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Início</a>
+              <a href="#plans" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Planos</a>
+              <a href="#coverage" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Cobertura</a>
+              <a href="#faq" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">FAQ</a>
+              <a href="#contact" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">Contato</a>
             </nav>
 
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center space-x-3">
               <Button
                 variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all"
                 onClick={() => window.open(mockData.externalLinks.speedTest, '_blank')}
               >
                 <Gauge className="mr-2 h-4 w-4" />
                 Speed Test
               </Button>
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all hover:shadow-[0_0_35px_rgba(34,211,238,0.8)]"
                 onClick={() => window.open(mockData.externalLinks.clientArea, '_blank')}
               >
                 <User className="mr-2 h-4 w-4" />
@@ -109,7 +131,7 @@ const HomePage = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-gray-700"
+              className="md:hidden text-cyan-400"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -118,24 +140,24 @@ const HomePage = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-200">
+            <div className="md:hidden py-4 border-t border-cyan-500/30 bg-gray-800/95">
               <nav className="flex flex-col space-y-3">
-                <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Início</a>
-                <a href="#plans" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Planos</a>
-                <a href="#coverage" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Cobertura</a>
-                <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</a>
-                <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contato</a>
+                <a href="#home" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium">Início</a>
+                <a href="#plans" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium">Planos</a>
+                <a href="#coverage" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium">Cobertura</a>
+                <a href="#faq" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium">FAQ</a>
+                <a href="#contact" className="text-cyan-300 hover:text-cyan-400 transition-colors font-medium">Contato</a>
                 <div className="flex flex-col space-y-2 pt-2">
                   <Button
                     variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full"
+                    className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 w-full"
                     onClick={() => window.open(mockData.externalLinks.speedTest, '_blank')}
                   >
                     <Gauge className="mr-2 h-4 w-4" />
                     Speed Test
                   </Button>
                   <Button
-                    className="bg-blue-600 hover:bg-blue-700 text-white w-full"
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white w-full"
                     onClick={() => window.open(mockData.externalLinks.clientArea, '_blank')}
                   >
                     <User className="mr-2 h-4 w-4" />
@@ -149,23 +171,23 @@ const HomePage = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100 px-4 py-1 text-sm">
+              <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 px-4 py-1 text-sm shadow-[0_0_20px_rgba(34,211,238,0.5)]">
                 Fibra Óptica 100% Pura
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">
                 Internet de Alta Velocidade para Sua Casa
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-cyan-100 leading-relaxed">
                 {mockData.company.description}. Planos a partir de R$ 79,90/mês com instalação gratuita.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-lg px-8 py-6 shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all"
                   onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                 >
                   Assine Agora
@@ -174,7 +196,7 @@ const HomePage = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-6"
+                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 text-lg px-8 py-6 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all"
                   onClick={() => window.open(mockData.externalLinks.speedTest, '_blank')}
                 >
                   <Gauge className="mr-2 h-5 w-5" />
@@ -183,11 +205,11 @@ const HomePage = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur-3xl opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur-3xl opacity-30 animate-pulse"></div>
               <img
                 src="https://images.unsplash.com/photo-1604869515882-4d10fa4b0492"
                 alt="Fibra Óptica"
-                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover"
+                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-cyan-500/30"
               />
             </div>
           </div>
@@ -195,13 +217,13 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-600">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-600 to-blue-700 border-y-2 border-cyan-400/30 shadow-[0_0_50px_rgba(34,211,238,0.3)]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {mockData.stats.map((stat) => (
               <div key={stat.id} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-blue-100 text-sm lg:text-base">{stat.label}</div>
+                <div className="text-4xl lg:text-5xl font-bold text-white mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">{stat.value}</div>
+                <div className="text-cyan-100 text-sm lg:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -491,14 +513,14 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="mb-4 bg-white p-4 rounded-lg inline-block">
+              <div className="mb-4">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                   alt="Lucas Net Logo" 
-                  className="h-20 w-auto"
+                  className="h-24 w-auto drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]"
                 />
               </div>
-              <p className="text-gray-400 leading-relaxed">{mockData.company.tagline}</p>
+              <p className="text-cyan-200 leading-relaxed">{mockData.company.tagline}</p>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">Links Rápidos</h3>
@@ -549,8 +571,8 @@ const HomePage = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 {mockData.company.name}. Todos os direitos reservados.</p>
+          <div className="border-t border-cyan-500/30 pt-8 text-center text-cyan-300">
+            <p>&copy; 2026 {mockData.company.name}. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
