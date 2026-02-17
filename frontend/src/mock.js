@@ -15,7 +15,7 @@ export const mockData = {
 
   // Links externos
   externalLinks: {
-    speedTest: "https://lucasnetfibra.com.br/speedtest", 
+    speedTest: "https://teste.lucasnetfibra.com.br/", 
     clientArea: "http://mkauth.lucasnetfibra.com.br/central"
   },
 
@@ -40,13 +40,12 @@ export const mockData = {
       name: "Power",
       speed: "500",
       unit: "Mega",
-      price: "119,90",
+      price: "99,90",
       features: [
-        "Wi-Fi 6 grátis",
+        "Wi-Fi grátis",
         "Instalação gratuita",
         "Suporte prioritário 24/7",
-        "Sem fidelidade",
-        "IP fixo grátis"
+        "Sem fidelidade"
       ],
       popular: true
     },
@@ -55,13 +54,12 @@ export const mockData = {
       name: "Ultra",
       speed: "800",
       unit: "Mega",
-      price: "179,90",
+      price: "149,90",
       features: [
-        "Wi-Fi 6 mesh grátis",
+        "Wi-Fi grátis",
         "Instalação gratuita",
         "Suporte VIP 24/7",
         "Sem fidelidade",
-        "IP fixo grátis",
         "Roteador premium"
       ],
       popular: false
@@ -87,13 +85,12 @@ export const mockData = {
       name: "Power + TV",
       speed: "500",
       unit: "Mega",
-      price: "149,90",
+      price: "129,90",
       features: [
-        "Wi-Fi 6 grátis",
+        "Wi-Fi grátis",
         "Instalação gratuita",
         "Suporte prioritário 24/7",
         "Sem fidelidade",
-        "IP fixo grátis",
         "+300 canais de TV"
       ],
       popular: false,
@@ -104,13 +101,12 @@ export const mockData = {
       name: "Ultra + TV",
       speed: "800",
       unit: "Mega",
-      price: "209,90",
+      price: "179,90",
       features: [
-        "Wi-Fi 6 mesh grátis",
+        "Wi-Fi grátis",
         "Instalação gratuita",
         "Suporte VIP 24/7",
         "Sem fidelidade",
-        "IP fixo grátis",
         "Roteador premium",
         "+300 canais de TV"
       ],

@@ -359,8 +359,8 @@ const HomePage = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur-3xl opacity-30 animate-pulse"></div>
               <img
-                src="https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf"
-                alt="Cobertura de Rede"
+                src="https://images.unsplash.com/photo-1597733336794-12d05021d510"
+                alt="Rede de Internet"
                 className="relative rounded-2xl shadow-xl w-full h-auto object-cover border-2 border-cyan-500/30"
               />
             </div>
