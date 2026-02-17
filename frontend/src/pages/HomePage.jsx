@@ -73,7 +73,7 @@ const HomePage = () => {
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/y7dx9plt_WhatsApp%20Image%202025-11-05%20at%2017.33.35.jpeg" 
+                src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                 alt="Lucas Net Logo" 
                 className="h-16 w-auto"
               />
@@ -493,7 +493,7 @@ const HomePage = () => {
             <div>
               <div className="mb-4 bg-white p-4 rounded-lg inline-block">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/y7dx9plt_WhatsApp%20Image%202025-11-05%20at%2017.33.35.jpeg" 
+                  src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                   alt="Lucas Net Logo" 
                   className="h-16 w-auto"
                 />
