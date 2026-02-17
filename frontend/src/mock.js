@@ -6,10 +6,10 @@ export const mockData = {
     name: "Lucas Net",
     tagline: "Conectando você ao futuro",
     description: "Internet de fibra óptica com velocidade e estabilidade incomparáveis",
-    phone: "(11) 98765-4321",
+    phone: "(24) 98765-4321",
     email: "contato@lucasnet.com.br",
-    whatsapp: "5511987654321",
-    address: "Av. Paulista, 1000 - São Paulo, SP"
+    whatsapp: "5524987654321",
+    address: "São Pedro da Serra - Rio de Janeiro, RJ"
   },
 
   // Links externos
@@ -70,21 +70,14 @@ export const mockData = {
   // Áreas de cobertura
   coverage: {
     cities: [
-      "São Paulo - SP",
-      "Guarulhos - SP",
-      "Osasco - SP",
-      "Santo André - SP",
-      "São Bernardo do Campo - SP",
-      "São Caetano do Sul - SP",
-      "Diadema - SP",
-      "Mauá - SP",
-      "Ribeirão Pires - SP",
-      "Taboão da Serra - SP",
-      "Barueri - SP",
-      "Carapicuíba - SP"
+      "São Pedro da Serra - RJ",
+      "Bocaina - RJ",
+      "Malford - RJ",
+      "Bocaina dos Blaut - RJ",
+      "Boa Esperança de Baixo - RJ"
     ],
-    neighborhoods: "120+ bairros atendidos",
-    coverage: "95% da região metropolitana"
+    neighborhoods: "5+ bairros atendidos",
+    coverage: "100% da região de São Pedro da Serra"
   },
 
   // Depoimentos de clientes
@@ -92,7 +85,7 @@ export const mockData = {
     {
       id: 1,
       name: "Maria Silva",
-      location: "São Paulo - SP",
+      location: "Bocaina - RJ",
       rating: 5,
       comment: "Melhor internet que já tive! Velocidade estável e suporte excelente. Recomendo muito a Lucas Net!",
       avatar: "MS"
@@ -100,7 +93,7 @@ export const mockData = {
     {
       id: 2,
       name: "João Santos",
-      location: "Guarulhos - SP",
+      location: "São Pedro da Serra - RJ",
       rating: 5,
       comment: "Trabalho home office e nunca tive problemas. A conexão é rápida e confiável. Atendimento nota 10!",
       avatar: "JS"
@@ -108,7 +101,7 @@ export const mockData = {
     {
       id: 3,
       name: "Ana Oliveira",
-      location: "Osasco - SP",
+      location: "Malford - RJ",
       rating: 5,
       comment: "Instalação rápida, preço justo e internet de qualidade. Toda família está satisfeita!",
       avatar: "AO"
@@ -116,7 +109,7 @@ export const mockData = {
     {
       id: 4,
       name: "Carlos Ferreira",
-      location: "Santo André - SP",
+      location: "Boa Esperança de Baixo - RJ",
       rating: 5,
       comment: "Migrei de outra operadora e a diferença é absurda. Lucas Net é outra categoria!",
       avatar: "CF"
@@ -171,7 +164,7 @@ export const mockData = {
   stats: [
     {
       id: 1,
-      value: "50mil+",
+      value: "5mil+",
       label: "Clientes Satisfeitos"
     },
     {
@@ -181,7 +174,7 @@ export const mockData = {
     },
     {
       id: 3,
-      value: "120+",
+      value: "5+",
       label: "Bairros Atendidos"
     },
     {
