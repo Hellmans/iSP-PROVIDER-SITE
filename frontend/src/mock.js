@@ -6,16 +6,16 @@ export const mockData = {
     name: "Lucas Net",
     tagline: "Conectando você ao futuro",
     description: "Internet de fibra óptica com velocidade e estabilidade incomparáveis",
-    phone: "(24) 98765-4321",
-    email: "contato@lucasnet.com.br",
-    whatsapp: "5524987654321",
+    phone: "(21) 97266-8405",
+    email: "contato@lucasnetfibra.com.br",
+    whatsapp: "5521972668405",
     address: "São Pedro da Serra - Rio de Janeiro, RJ"
   },
 
   // Links externos
   externalLinks: {
-    speedTest: "https://librespeed.org/", // Pode ser alterado para o link real
-    clientArea: "https://painel.lucasnet.com.br/login" // Link fictício
+    speedTest: "https://lucasnetfibra.com.br/speedtest", 
+    clientArea: "https://lucasnetfibra.com.br/login"
   },
 
   // Planos de internet
@@ -70,13 +70,12 @@ export const mockData = {
   // Áreas de cobertura
   coverage: {
     cities: [
-      "São Pedro da Serra - RJ",
       "Bocaina - RJ",
-      "Malford - RJ",
+      "Bocaina dos Malford - RJ",
       "Bocaina dos Blaut - RJ",
       "Boa Esperança de Baixo - RJ"
     ],
-    neighborhoods: "5+ bairros atendidos",
+    neighborhoods: "4+ bairros atendidos",
     coverage: "100% da região de São Pedro da Serra"
   },
 
@@ -174,7 +173,7 @@ export const mockData = {
     },
     {
       id: 3,
-      value: "5+",
+      value: "4+",
       label: "Bairros Atendidos"
     },
     {

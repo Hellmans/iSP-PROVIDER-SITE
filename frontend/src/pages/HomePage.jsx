@@ -81,10 +81,13 @@ const HomePage = () => {
           href={`https://wa.me/${mockData.company.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 animate-pulse"
-          style={{ boxShadow: '0 0 30px rgba(34, 197, 94, 0.6)' }}
+          className="fixed bottom-8 right-8 z-50 transition-all hover:scale-110"
         >
-          <MessageCircle className="h-8 w-8" />
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp"
+            className="h-16 w-16 drop-shadow-[0_0_20px_rgba(37,211,102,0.8)] hover:drop-shadow-[0_0_30px_rgba(37,211,102,1)]"
+          />
         </a>
       )}
 
@@ -97,7 +100,7 @@ const HomePage = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                 alt="Lucas Net Logo" 
-                className="h-20 w-auto"
+                className="h-24 w-auto"
               />
             </div>
 
@@ -173,7 +176,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
               <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 px-4 py-1 text-sm shadow-[0_0_20px_rgba(34,211,238,0.5)]">
                 Fibra Óptica 100% Pura
@@ -184,7 +187,7 @@ const HomePage = () => {
               <p className="text-xl text-cyan-100 leading-relaxed">
                 {mockData.company.description}. Planos a partir de R$ 79,90/mês com instalação gratuita.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-lg px-8 py-6 shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all"
@@ -203,14 +206,6 @@ const HomePage = () => {
                   Testar Velocidade
                 </Button>
               </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur-3xl opacity-30 animate-pulse"></div>
-              <img
-                src="https://images.unsplash.com/photo-1604869515882-4d10fa4b0492"
-                alt="Fibra Óptica"
-                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-cyan-500/30"
-              />
             </div>
           </div>
         </div>
@@ -518,7 +513,7 @@ const HomePage = () => {
                 <img 
                   src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/09s3ikpe_WhatsApp%20Image%202025-11-05%20at%2017.33.35.png" 
                   alt="Lucas Net Logo" 
-                  className="h-24 w-auto drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]"
+                  className="h-32 w-auto drop-shadow-[0_0_20px_rgba(34,211,238,0.9)]"
                 />
               </div>
               <p className="text-cyan-200 leading-relaxed">{mockData.company.tagline}</p>
