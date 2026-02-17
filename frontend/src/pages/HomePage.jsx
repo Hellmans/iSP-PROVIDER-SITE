@@ -259,11 +259,11 @@ const HomePage = () => {
       </section>
 
       {/* Plans Section */}
-      <section id="plans" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="plans" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-blue-900/50 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Escolha seu plano ideal</h2>
-            <p className="text-xl text-gray-600">Sem fidelidade, instalação grátis e suporte 24/7</p>
+            <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Escolha seu plano ideal</h2>
+            <p className="text-xl text-cyan-200">Sem fidelidade, instalação grátis e suporte 24/7</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {mockData.plans.map((plan) => (
@@ -271,33 +271,33 @@ const HomePage = () => {
                 key={plan.id}
                 className={`relative ${
                   plan.popular
-                    ? 'border-4 border-blue-600 shadow-2xl scale-105'
-                    : 'border-2 hover:border-blue-600 hover:shadow-xl'
-                } transition-all`}
+                    ? 'bg-gradient-to-br from-cyan-600/20 to-blue-700/20 border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.5)] scale-105'
+                    : 'bg-gray-800/50 border-2 border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                } transition-all backdrop-blur-sm`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-blue-600 text-white px-4 py-1">Mais Popular</Badge>
+                    <Badge className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-1 shadow-[0_0_20px_rgba(34,211,238,0.6)]">Mais Popular</Badge>
                   </div>
                 )}
                 <CardHeader className="text-center pb-8">
-                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
+                  <CardTitle className="text-2xl mb-2 text-white">{plan.name}</CardTitle>
                   <div className="mt-4">
-                    <span className="text-5xl font-bold text-gray-900">{plan.speed}</span>
-                    <span className="text-2xl text-gray-600 ml-2">{plan.unit}</span>
+                    <span className="text-5xl font-bold text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">{plan.speed}</span>
+                    <span className="text-2xl text-cyan-300 ml-2">{plan.unit}</span>
                   </div>
                   <div className="mt-4">
-                    <span className="text-gray-600">R$</span>
-                    <span className="text-4xl font-bold text-blue-600">{plan.price}</span>
-                    <span className="text-gray-600">/mês</span>
+                    <span className="text-cyan-200">R$</span>
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-cyan-200">/mês</span>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
+                        <Check className="h-5 w-5 text-green-400 mr-3 mt-0.5 flex-shrink-0 drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+                        <span className="text-cyan-100">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -306,9 +306,9 @@ const HomePage = () => {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                        : 'bg-gray-900 hover:bg-gray-800 text-white'
-                    }`}
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-[0_0_25px_rgba(34,211,238,0.6)]'
+                        : 'bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white border-2 border-cyan-500/30'
+                    } transition-all`}
                     size="lg"
                     onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                   >
