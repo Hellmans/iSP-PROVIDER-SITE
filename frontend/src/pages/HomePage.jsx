@@ -72,8 +72,11 @@ const HomePage = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <Wifi className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">{mockData.company.name}</span>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/y7dx9plt_WhatsApp%20Image%202025-11-05%20at%2017.33.35.jpeg" 
+                alt="Lucas Net Logo" 
+                className="h-10 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}
@@ -488,9 +491,12 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center mb-4">
-                <Wifi className="h-8 w-8 text-blue-400" />
-                <span className="ml-2 text-2xl font-bold">{mockData.company.name}</span>
+              <div className="mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_fast-connect-isp/artifacts/y7dx9plt_WhatsApp%20Image%202025-11-05%20at%2017.33.35.jpeg" 
+                  alt="Lucas Net Logo" 
+                  className="h-12 w-auto brightness-200"
+                />
               </div>
               <p className="text-gray-400 leading-relaxed">{mockData.company.tagline}</p>
             </div>
