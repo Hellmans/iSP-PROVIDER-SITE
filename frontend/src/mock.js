@@ -24,7 +24,7 @@ export const mockData = {
     {
       id: 1,
       name: "Essencial",
-      speed: "200",
+      speed: "300",
       unit: "Mega",
       price: "79,90",
       features: [
@@ -53,8 +53,8 @@ export const mockData = {
     {
       id: 3,
       name: "Ultra",
-      speed: "1",
-      unit: "Giga",
+      speed: "800",
+      unit: "Mega",
       price: "179,90",
       features: [
         "Wi-Fi 6 mesh grátis",
@@ -69,7 +69,7 @@ export const mockData = {
     {
       id: 4,
       name: "Essencial + TV",
-      speed: "200",
+      speed: "300",
       unit: "Mega",
       price: "109,90",
       features: [
@@ -102,8 +102,8 @@ export const mockData = {
     {
       id: 6,
       name: "Ultra + TV",
-      speed: "1",
-      unit: "Giga",
+      speed: "800",
+      unit: "Mega",
       price: "209,90",
       features: [
         "Wi-Fi 6 mesh grátis",
