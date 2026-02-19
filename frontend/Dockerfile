@@ -4,18 +4,28 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json yarn.lock* package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install dependencies (suporta yarn ou npm)
+RUN if [ -f yarn.lock ]; then \
+        yarn install --production --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then \
+        npm ci --only=production; \
+    else \
+        npm install --production; \
+    fi
 
 # Copy application code
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN if [ -f yarn.lock ]; then \
+        yarn build; \
+    else \
+        npm run build; \
+    fi
 
-# Production stage with nginx
+# Production stage
 FROM node:20-alpine
 
 WORKDIR /app
