@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    container_name: lucas-net-mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: lucas_net
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - lucas-net-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/lucas_net --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend FastAPI
+  backend:
+    image: python:3.11-slim
+    container_name: lucas-net-backend
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8001:8001"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+      - DB_NAME=lucas_net
+    command: >
+      bash -c "pip install --no-cache-dir -r requirements.txt &&
+               uvicorn server:app --host 0.0.0.0 --port 8001 --reload"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - lucas-net-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend React
+  frontend:
+    image: node:20-alpine
+    container_name: lucas-net-frontend
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "80:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8001
+      - CHOKIDAR_USEPOLLING=true
+    command: >
+      sh -c "npm install &&
+             npm start"
+    depends_on:
+      - backend
+    networks:
+      - lucas-net-network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  lucas-net-network:
+    driver: bridge
