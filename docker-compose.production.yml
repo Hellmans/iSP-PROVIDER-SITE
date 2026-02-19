@@ -37,7 +37,7 @@ services:
     networks:
       - lucas-net-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8001/api/"]
+      test: ["CMD", "curl", "-f", "http://192.168.10.6:8001/api/"]
       interval: 30s
       timeout: 10s
       retries: 3
